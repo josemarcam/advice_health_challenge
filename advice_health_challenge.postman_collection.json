@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "bbb5263b-2d8b-4611-a3d1-08584e12b55e",
+		"name": "advice_health_challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3Nzc0OTMwMiwianRpIjoiODljZTM3NDEtNWMwZi00ZmJhLThjYzctNTFkZjBlNTlkZDc3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MX0sIm5iZiI6MTY3Nzc0OTMwMiwiZXhwIjoxNjc3ODM1NzAyfQ.X7GU7hRmKUcCRZxlrq2GEaiiv8t53s_27tt0ESmNmaY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"email@email.com\",\n    \"password\":\"123qwe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/auth/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3Nzc5MTM4MywianRpIjoiZWFjZDljOTMtODRjOC00ODM4LWIzMjctZmRkMDU5ODhlOTVjIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOnsiaWQiOjF9LCJuYmYiOjE2Nzc3OTEzODMsImV4cCI6MTY3Nzk2NDE4M30.4UcTsMEpIxBnsmOOop3gUbVrHDAoypFBp3ZuXFhMXrs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\", \n    \"password\": \"123qwe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/auth/refresh"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "get_all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3Nzg4NTIwOSwianRpIjoiZGMyODhmZTctNjVmZS00MGQzLThkOTMtNzdlNDI4MWJiYTQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MX0sIm5iZiI6MTY3Nzg4NTIwOSwiZXhwIjoxNjc3OTcxNjA5fQ.VHKHfogImuXknQFm5_SjgyGPBcf26y_815vTrUMiFOY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:5001/api/customers/"
+					},
+					"response": []
+				},
+				{
+					"name": "able_to_buy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3Nzg4NTIwOSwianRpIjoiZGMyODhmZTctNjVmZS00MGQzLThkOTMtNzdlNDI4MWJiYTQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MX0sIm5iZiI6MTY3Nzg4NTIwOSwiZXhwIjoxNjc3OTcxNjA5fQ.VHKHfogImuXknQFm5_SjgyGPBcf26y_815vTrUMiFOY"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:5001/api/customers/able_to_buy"
+					},
+					"response": []
+				},
+				{
+					"name": "create_customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3Nzg4NTIwOSwianRpIjoiZGMyODhmZTctNjVmZS00MGQzLThkOTMtNzdlNDI4MWJiYTQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MX0sIm5iZiI6MTY3Nzg4NTIwOSwiZXhwIjoxNjc3OTcxNjA5fQ.VHKHfogImuXknQFm5_SjgyGPBcf26y_815vTrUMiFOY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jose Martins Camargo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/customers/"
+					},
+					"response": []
+				},
+				{
+					"name": "create_customer_car",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3Nzg4NTIwOSwianRpIjoiZGMyODhmZTctNjVmZS00MGQzLThkOTMtNzdlNDI4MWJiYTQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJpZCI6MX0sIm5iZiI6MTY3Nzg4NTIwOSwiZXhwIjoxNjc3OTcxNjA5fQ.VHKHfogImuXknQFm5_SjgyGPBcf26y_815vTrUMiFOY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"hatch\",\n    \"color\": \"yellow\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/customers/1/cars"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: 'mysql:5.7'
+    environment:
+      MYSQL_DATABASE: 'nork_database'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - "3336:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    networks:
+      docker-network:
+        aliases:
+          - database
+  dev-env:
+    build: ./
+    ports: 
+      - "5001:5000"
+    command: bash -c "python -m flask db upgrade && python -m flask run --host=0.0.0.0" 
+    networks:
+      - docker-network
+    depends_on:
+      - db
+networks:
+  docker-network:
